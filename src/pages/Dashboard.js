@@ -62,7 +62,7 @@ const Dashboard = ({ user, onLogout }) => {
 
   const handleDisconnectTwitter = async () => {
     if (!window.confirm('Are you sure you want to disconnect your Twitter account?')) return;
-    
+
     try {
       await axios.delete(`${API}/twitter/disconnect`, config);
       setTwitterAccount(null);
@@ -114,7 +114,7 @@ const Dashboard = ({ user, onLogout }) => {
       toast.error('Please connect your Twitter account first');
       return;
     }
-    
+
     setLoading(true);
     try {
       const response = await axios.post(`${API}/posts/generate`, {}, config);
@@ -139,9 +139,9 @@ const Dashboard = ({ user, onLogout }) => {
             </div>
             <div className="flex items-center space-x-4">
               <span className="text-sm text-slate-600 hidden sm:block">Welcome, {user.name}</span>
-              <Button 
-                variant="outline" 
-                size="sm" 
+              <Button
+                variant="outline"
+                size="sm"
                 onClick={onLogout}
                 data-testid="logout-btn"
                 className="border-slate-200"
@@ -266,8 +266,8 @@ const Dashboard = ({ user, onLogout }) => {
                 {twitterAccount ? (
                   <div className="space-y-4">
                     <div className="flex items-center space-x-4 p-4 bg-slate-50 rounded-lg border border-slate-200">
-                      <img 
-                        src={twitterAccount.profile_image_url} 
+                      <img
+                        src={twitterAccount.profile_image_url}
                         alt={twitterAccount.name}
                         className="w-12 h-12 rounded-full"
                       />
@@ -279,8 +279,8 @@ const Dashboard = ({ user, onLogout }) => {
                         <span className="text-xs bg-green-100 text-green-800 px-3 py-1 rounded-full">Connected</span>
                       </div>
                     </div>
-                    <Button 
-                      variant="destructive" 
+                    <Button
+                      variant="destructive"
                       onClick={handleDisconnectTwitter}
                       data-testid="disconnect-twitter-btn"
                     >
@@ -306,8 +306,8 @@ const Dashboard = ({ user, onLogout }) => {
                         </div>
                       </div>
                     </div>
-                    <Button 
-                      onClick={handleConnectTwitter} 
+                    <Button
+                      onClick={handleConnectTwitter}
                       data-testid="connect-twitter-btn"
                       disabled={loading}
                       className="bg-twitter hover:bg-twitter-dark"
@@ -395,22 +395,23 @@ const Dashboard = ({ user, onLogout }) => {
                   />
                 </div>
 
-                <div className="flex space-x-3">
-                  <Button 
-                    onClick={handleSaveContentConfig} 
+                <div className="flex flex-col sm:flex-row gap-3"> {/* Stacks vertically on mobile */}
+                  <Button
+                    onClick={handleSaveContentConfig}
                     data-testid="save-content-btn"
                     disabled={loading}
-                    className="bg-brand-600 hover:bg-brand-700"
+                    className="w-full sm:w-auto bg-brand-600 hover:bg-brand-700 text-base px-6 py-5 sm:py-2.5" // Larger tap area on mobile
                   >
                     {loading ? 'Saving...' : 'Save Configuration'}
                   </Button>
-                  <Button 
-                    variant="outline" 
+                  <Button
+                    variant="outline"
                     onClick={handleGenerateTestPost}
                     data-testid="test-post-btn"
-                    disabled={loading}
+                    disabled={loading || !twitterAccount}
+                    className="w-full sm:w-auto text-base px-6 py-5 sm:py-2.5 border-slate-300" // Consistent height & padding
                   >
-                    <Send className="w-4 h-4 mr-2" />
+                    <Send className="w-5 h-5 mr-2" /> {/* Slightly larger icon for mobile */}
                     Generate & Post Now
                   </Button>
                 </div>
@@ -468,11 +469,12 @@ const Dashboard = ({ user, onLogout }) => {
                   />
                 </div>
 
-                <Button 
-                  onClick={handleSaveSchedule} 
+                {/* IMPROVED: Save Schedule button - full width on mobile for better UX */}
+                <Button
+                  onClick={handleSaveSchedule}
                   data-testid="save-schedule-btn"
                   disabled={loading}
-                  className="bg-brand-600 hover:bg-brand-700"
+                  className="w-full sm:w-auto bg-brand-600 hover:bg-brand-700 text-base px-6 py-5 sm:py-2.5"
                 >
                   {loading ? 'Saving...' : 'Save Schedule'}
                 </Button>
