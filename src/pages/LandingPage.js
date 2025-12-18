@@ -43,7 +43,7 @@ const LandingPage = () => {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2">
               <Twitter className="w-8 h-8 text-brand-600" />
-              <span className="text-2xl font-heading font-extrabold gradient-text">ContentHub AI</span>
+              <span className="text-2xl font-heading font-extrabold gradient-text">TwiLight</span>
             </div>
             <Button 
               onClick={() => navigate('/auth')} 
@@ -147,7 +147,7 @@ const LandingPage = () => {
             </div>
             <div className="space-y-6">
               <h2 className="text-3xl sm:text-4xl font-heading font-bold text-slate-900">
-                Why Content Creators Choose ContentHub AI
+                Why Content Creators Choose TwiLight
               </h2>
               <div className="space-y-4">
                 {benefits.map((benefit, index) => (
@@ -196,10 +196,10 @@ const LandingPage = () => {
         <div className="max-w-7xl mx-auto text-center">
           <div className="flex items-center justify-center space-x-2 mb-4">
             <Twitter className="w-6 h-6" />
-            <span className="text-xl font-heading font-bold">ContentHub AI</span>
+            <span className="text-xl font-heading font-bold">TwiLight</span>
           </div>
           <p className="text-slate-400">AI-Powered Twitter Content Automation Platform</p>
-          <p className="text-slate-500 text-sm mt-4">© 2025 ContentHub AI. All rights reserved.</p>
+          <p className="text-slate-500 text-sm mt-4">© 2025 TwiLight. All rights reserved.</p>
         </div>
       </footer>
     </div>

@@ -57,7 +57,7 @@ const AuthPage = ({ onLogin }) => {
         <div className="text-center mb-8">
           <div className="flex items-center justify-center space-x-2 mb-4">
             <Twitter className="w-10 h-10 text-brand-600" />
-            <span className="text-3xl font-heading font-extrabold gradient-text">ContentHub AI</span>
+            <span className="text-3xl font-heading font-extrabold gradient-text">TwiLight</span>
           </div>
           <p className="text-slate-600">Start automating your Twitter content today</p>
         </div>

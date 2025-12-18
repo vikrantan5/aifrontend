@@ -135,7 +135,7 @@ const Dashboard = ({ user, onLogout }) => {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2">
               <Twitter className="w-8 h-8 text-brand-600" />
-              <span className="text-2xl font-heading font-extrabold gradient-text">ContentHub AI</span>
+              <span className="text-2xl font-heading font-extrabold gradient-text">TwiLight</span>
             </div>
             <div className="flex items-center space-x-4">
               <span className="text-sm text-slate-600 hidden sm:block">Welcome, {user.name}</span>
