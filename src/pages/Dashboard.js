@@ -300,7 +300,7 @@ const Dashboard = ({ user, onLogout }) => {
                           <ol className="list-decimal list-inside space-y-1 text-yellow-700">
                             <li>Create a Twitter Developer account at developer.twitter.com</li>
                             <li>Create a new app and enable OAuth 1.0a</li>
-                            <li>Set callback URL to: https://x-content-hub-2.preview.emergentagent.com/twitter-callback</li>
+                            <li>Set callback URL to: https://x-content-hub-2.preview.x.com/twitter-callback</li>
                             <li>Add your API keys to the backend .env file</li>
                           </ol>
                         </div>
